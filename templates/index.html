@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>HANK’S BARBER – Foglalás</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Időpontfoglalás</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="color: red;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="POST">
+    <label>Név: <input type="text" name="name" required></label><br>
+    <label>E-mail: <input type="email" name="email"></label><br>
+    <label>Telefon: <input type="tel" name="phone"></label><br>
+    <label>Szolgáltatás:
+      <select name="service" required>
+        <option value="Hajvágás">Hajvágás</option>
+        <option value="Borotválás">Borotválás</option>
+        <option value="Haj+Borotva">Hajvágás + Borotválás</option>
+      </select>
+    </label><br>
+    <label>Időpont: <input type="datetime-local" name="datetime" required></label><br>
+    <button type="submit">Foglalás</button>
+  </form>
+</body>
+</html>
