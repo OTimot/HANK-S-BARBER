@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Kosár – HANK’S BARBER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Főoldal</a></li>
+      <li><a href="/szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="/webshop">Webshop</a></li>
+      <li><a href="/kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <section class="cart">
+    <h1>Kosarad</h1>
+
+    <div class="cart-summary">
+      <ul>
+        <li>HANK’S Parfüm #1 – 6 990 Ft</li>
+        <li>Hajlakk Ultra – 4 290 Ft</li>
+        <li>Szakállbalzsam – 3 590 Ft</li>
+      </ul>
+      <p class="total">Végösszeg: <strong>14 870 Ft</strong></p>
+
+      <form method="POST">
+        <button type="submit" class="btn">Fizetés</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
