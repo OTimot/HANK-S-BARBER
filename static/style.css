@@ -213,3 +213,28 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.logotext {
+  text-align: center;
+  color: white;
+  margin-bottom: 1em;
+}
+
+.logotext-main {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.logotext-sub {
+  font-size: 1.3em;
+  letter-spacing: 0.4em;
+  font-weight: 300;
+  margin-top: 0.2em;
+}
+
+.dot {
+  color: white;
+  font-weight: 700;
+  margin-left: 2px;
+}
