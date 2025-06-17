@@ -195,3 +195,21 @@ body {
   background-color: #181818;
   color: white;
 }
+
+.contact {
+  padding: 3em;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+.contact p {
+  margin: 0.5em 0;
+}
+
+.map {
+  margin-top: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
