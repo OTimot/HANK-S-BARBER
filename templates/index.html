@@ -6,13 +6,14 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>HANK’S BARBER</h1>
-      <p>Stílus. Precizitás. Férfierő.</p>
-      <a href="/foglalas" class="btn">Időpontfoglalás</a>
-    </div>
-  </header>
+<header class="hero">
+  <div class="hero-content">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="HANK’S BARBER logó" class="logo">
+    <h1>Stílus. Precizitás. Férfierő.</h1>
+    <a href="/foglalas" class="btn">Időpontfoglalás</a>
+  </div>
+</header>
+
 
   <nav class="navbar">
     <ul>
