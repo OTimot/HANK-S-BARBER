@@ -113,3 +113,16 @@ body {
   border: none;
   width: 100%;
 }
+
+.success {
+  padding: 4em;
+  text-align: center;
+  color: #fff;
+  background-color: #181818;
+}
+
+.success .btn {
+  margin-top: 1em;
+  background-color: gold;
+  color: black;
+}
