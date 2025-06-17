@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Szolgáltatások – HANK’S BARBER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Főoldal</a></li>
+      <li><a href="/szolgaltatasok" class="active">Szolgáltatások</a></li>
+      <li><a href="/webshop">Webshop</a></li>
+      <li><a href="/kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <section class="services">
+    <h1>Szolgáltatásaink</h1>
+
+    <div class="service-list">
+      <div class="service">
+        <img src="/static/images/hajvagas.jpg" alt="Hajvágás">
+        <h3>Férfi hajvágás</h3>
+        <p>4 500 Ft</p>
+      </div>
+
+      <div class="service">
+        <img src="/static/images/borotvalas.jpg" alt="Borotválás">
+        <h3>Hagyományos borotválás</h3>
+        <p>3 500 Ft</p>
+      </div>
+
+      <div class="service">
+        <img src="/static/images/haj_borotva.jpg" alt="Hajvágás és borotválás">
+        <h3>Hajvágás + borotválás</h3>
+        <p>7 500 Ft</p>
+      </div>
+
+      <div class="service">
+        <img src="/static/images/szakall.jpg" alt="Szakáll igazítás">
+        <h3>Szakáll igazítás</h3>
+        <p>2 900 Ft</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
