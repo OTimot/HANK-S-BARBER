@@ -158,3 +158,33 @@ body {
   width: 100%;
   border-radius: 5px;
 }
+
+.cart {
+  padding: 3em;
+  background-color: #111;
+  color: white;
+  text-align: center;
+}
+
+.cart-summary {
+  background-color: #222;
+  padding: 2em;
+  margin: auto;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-summary li {
+  margin-bottom: 0.5em;
+}
+
+.total {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
