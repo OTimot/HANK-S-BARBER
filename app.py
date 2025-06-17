@@ -1,51 +1,55 @@
-from flask import Flask, render_template, request, redirect, flash
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'titkoskulcs'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-db = SQLAlchemy(app)
 
-# --- MODELL ---
-class Appointment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100))
-    phone = db.Column(db.String(20))
-    service = db.Column(db.String(100), nullable=False)
-    datetime = db.Column(db.DateTime, nullable=False)
-
-# --- FŐOLDAL (foglalási űrlap) ---
-@app.route("/", methods=["GET", "POST"])
+@app.route('/')
 def index():
-    if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
-        phone = request.form["phone"]
-        service = request.form["service"]
-        dt = request.form["datetime"]
+    return render_template('index.html')
 
-        # ellenőrzés: időpont már foglalt?
-        existing = Appointment.query.filter_by(datetime=dt).first()
-        if existing:
-            flash("Ez az időpont már foglalt, kérlek válassz másikat!")
-            return redirect("/")
+@app.route('/szolgaltatasok')
+def szolgaltatasok():
+    return render_template('szolgaltatasok.html')
 
-        appt = Appointment(
-            name=name,
-            email=email,
-            phone=phone,
-            service=service,
-            datetime=datetime.strptime(dt, "%Y-%m-%dT%H:%M")
-        )
-        db.session.add(appt)
-        db.session.commit()
-        return render_template("success.html", name=name)
-    
-    return render_template("index.html")
+@app.route('/foglalas', methods=['GET', 'POST'])
+def foglalas():
+    if request.method == 'POST':
+        return redirect(url_for('foglalas_sikeres'))
+    return render_template('foglalas.html')
 
-if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
+@app.route('/foglalas/sikeres')
+def foglalas_sikeres():
+    return render_template('foglalas_sikeres.html')
+
+@app.route('/webshop')
+def webshop():
+    # Demó terméklista
+    termekek = [
+        {'nev': "HANK'S Parfüm #1", 'ar': '6 990 Ft', 'kep': 'parfum1.jpg'},
+        {'nev': "HANK'S Hajlakk Ultra", 'ar': '4 290 Ft', 'kep': 'hajlakk.jpg'},
+        {'nev': "Szakállbalzsam Deluxe", 'ar': '3 590 Ft', 'kep': 'balzsam.jpg'},
+        {'nev': "Férfi sampon – Fresh", 'ar': '2 990 Ft', 'kep': 'sampon.jpg'},
+        {'nev': "Vágóolló Pro", 'ar': '9 990 Ft', 'kep': 'ollo.jpg'},
+        {'nev': "Hajformázó paszta Strong", 'ar': '3 990 Ft', 'kep': 'paszta.jpg'},
+        {'nev': "Szakállolaj Classic", 'ar': '4 490 Ft', 'kep': 'olaj.jpg'},
+        {'nev': "HANK’S Fodrász kötény", 'ar': '6 990 Ft', 'kep': 'koteny.jpg'},
+        {'nev': "Hajszárító Slim", 'ar': '11 990 Ft', 'kep': 'hajszarito.jpg'},
+        {'nev': "Ajándékcsomag Premium", 'ar': '14 990 Ft', 'kep': 'ajandek.jpg'}
+    ]
+    return render_template('webshop.html', termekek=termekek)
+
+@app.route('/kosar', methods=['GET', 'POST'])
+def kosar():
+    if request.method == 'POST':
+        return redirect(url_for('sikeres_rendeles'))
+    return render_template('kosar.html')
+
+@app.route('/sikeres-rendeles')
+def sikeres_rendeles():
+    return render_template('sikeres_rendeles.html')
+
+@app.route('/kapcsolat')
+def kapcsolat():
+    return render_template('kapcsolat.html')
+
+if __name__ == '__main__':
     app.run(debug=True)
