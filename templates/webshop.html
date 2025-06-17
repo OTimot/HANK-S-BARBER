@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Webshop – HANK’S BARBER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Főoldal</a></li>
+      <li><a href="/szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="/webshop" class="active">Webshop</a></li>
+      <li><a href="/kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <section class="webshop">
+    <h1>Termékeink</h1>
+    <div class="termekek">
+      {% for termek in termekek %}
+      <div class="kartya">
+        <img src="{{ url_for('static', filename='images/' + termek.kep) }}" alt="{{ termek.nev }}">
+        <h3>{{ termek.nev }}</h3>
+        <p>{{ termek.ar }}</p>
+        <a href="/kosar" class="btn">Kosárba</a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</body>
+</html>
