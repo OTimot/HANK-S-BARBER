@@ -188,3 +188,10 @@ body {
   font-size: 1.2em;
   margin-top: 1em;
 }
+
+.success {
+  padding: 4em;
+  text-align: center;
+  background-color: #181818;
+  color: white;
+}
