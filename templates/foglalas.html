@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Időpontfoglalás – HANK’S BARBER</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Főoldal</a></li>
+      <li><a href="/szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="/webshop">Webshop</a></li>
+      <li><a href="/kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <section class="booking">
+    <h1>Időpontfoglalás</h1>
+    <form method="POST" class="booking-form">
+      <label>Név:
+        <input type="text" name="name" placeholder="Teljes név" required>
+      </label>
+
+      <label>E-mail:
+        <input type="email" name="email" placeholder="email@cim.hu">
+      </label>
+
+      <label>Telefonszám:
+        <input type="tel" name="phone" placeholder="+36 30 123 4567">
+      </label>
+
+      <label>Szolgáltatás:
+        <select name="service" required>
+          <option value="Hajvágás">Hajvágás</option>
+          <option value="Borotválás">Borotválás</option>
+          <option value="Hajvágás + Borotválás">Hajvágás + Borotválás</option>
+          <option value="Szakáll igazítás">Szakáll igazítás</option>
+        </select>
+      </label>
+
+      <label>Időpont:
+        <input type="datetime-local" name="datetime" required>
+      </label>
+
+      <button type="submit" class="btn">Foglalás elküldése</button>
+    </form>
+  </section>
+</body>
+</html>
