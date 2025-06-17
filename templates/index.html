@@ -2,33 +2,31 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <title>HANK’S BARBER – Foglalás</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <title>HANK’S BARBER – Főoldal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Időpontfoglalás</h1>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <ul style="color: red;">
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
-  <form method="POST">
-    <label>Név: <input type="text" name="name" required></label><br>
-    <label>E-mail: <input type="email" name="email"></label><br>
-    <label>Telefon: <input type="tel" name="phone"></label><br>
-    <label>Szolgáltatás:
-      <select name="service" required>
-        <option value="Hajvágás">Hajvágás</option>
-        <option value="Borotválás">Borotválás</option>
-        <option value="Haj+Borotva">Hajvágás + Borotválás</option>
-      </select>
-    </label><br>
-    <label>Időpont: <input type="datetime-local" name="datetime" required></label><br>
-    <button type="submit">Foglalás</button>
-  </form>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>HANK’S BARBER</h1>
+      <p>Stílus. Precizitás. Férfierő.</p>
+      <a href="/foglalas" class="btn">Időpontfoglalás</a>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Főoldal</a></li>
+      <li><a href="/szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="/webshop">Webshop</a></li>
+      <li><a href="/kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro">
+    <h2>Üdvözlünk a HANK’S BARBER világában</h2>
+    <p>Egy hely, ahol a férfias elegancia találkozik a modern borbélyművészettel.</p>
+    <p>Válassz stílust, és mi életre keltjük!</p>
+  </section>
 </body>
 </html>
