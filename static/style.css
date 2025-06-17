@@ -1,16 +1,60 @@
 body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #f2f2f2;
+}
+
+.hero {
+  background-image: url('/static/images/hero-barber.jpg'); /* lecserélhető */
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
   padding: 2em;
+  border-radius: 10px;
 }
-input, select {
-  margin: 0.5em 0;
-  padding: 0.5em;
+
+.btn {
+  background-color: gold;
+  color: #111;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
 }
-button {
-  padding: 0.7em;
-  background-color: #333;
+
+.navbar {
+  background-color: #222;
+  padding: 1em;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar a {
   color: white;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.intro {
+  padding: 3em;
+  text-align: center;
 }
