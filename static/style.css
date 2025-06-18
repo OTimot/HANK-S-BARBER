@@ -32,27 +32,53 @@ body {
 }
 
 .navbar {
-  background-color: #222;
-  padding: 1em;
-  text-align: center;
+  background-color: #111;
+  color: white;
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.navbar ul {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  line-height: 1.2;
+}
+
+.nav-logo .logotext-main {
+  font-weight: 700;
+  font-size: 1.4em;
+  letter-spacing: 0.05em;
+}
+
+.nav-logo .logotext-sub {
+  font-size: 0.9em;
+  letter-spacing: 0.3em;
+  font-weight: 300;
+}
+
+.nav-links {
   list-style: none;
+  display: flex;
+  gap: 1.5em;
   margin: 0;
   padding: 0;
 }
 
-.navbar li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.navbar a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
+
 
 .intro {
   padding: 3em;
